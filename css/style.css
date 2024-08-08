@@ -50,3 +50,20 @@ h1 {
     border-radius: 50%;
     object-fit: cover;
 }
+
+.photographer-location {
+    font-size: 1em;
+    color: #901C1C;
+    margin-top: -20px;
+}
+
+.photographer-description {
+    font-size: 1em;
+    margin-top: -15px;
+}
+
+.photographer-prix {
+    font-size: 1em;
+    color: #757575;
+    margin-top: -15px;
+}
