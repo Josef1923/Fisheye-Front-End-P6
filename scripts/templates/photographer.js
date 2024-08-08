@@ -20,7 +20,7 @@ function photographerTemplate(data) {
         description.classList.add('photographer-description');
 
         const prix = document.createElement('p');
-        prix.textContent = `${price} €`;
+        prix.textContent = `${price} €/jour`;
         prix.classList.add('photographer-prix');
 
 
