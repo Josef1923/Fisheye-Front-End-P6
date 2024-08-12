@@ -2,6 +2,10 @@
 const modal = document.getElementById("contact_modal"); 
 const contactButton = document.getElementById("contactButton"); 
 const closeButton = document.getElementById("closeButton"); 
+const first = document.getElementById("first");      
+const last = document.getElementById("last");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
 
 // Event pour ouvrir le modal
 contactButton.addEventListener("click", openModal);
@@ -21,3 +25,19 @@ function closeModal() {
     modal.setAttribute("aria-hidden", "true"); 
   }
   
+
+  //Empechement comportement par défaut "submit"  
+modal.addEventListener("submit", (event) => {
+    event.preventDefault();        
+
+        //Console log
+        const prénom = first.value;
+        console.log("Prénom:", prénom);        
+        const nom = last.value;
+        console.log("Nom:", nom);
+        const mail = email.value;
+        console.log("Email:", mail);
+        const msg = message.value;
+        console.log("Message:", msg);             
+    });
+       
