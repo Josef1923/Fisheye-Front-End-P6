@@ -45,10 +45,14 @@
 .modal header {
     justify-content: space-between;
     width: 100%;
+    position: relative
 }
 
 .modal header img {
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .modal header h2 {
