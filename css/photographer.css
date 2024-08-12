@@ -1,5 +1,13 @@
 #contact_modal {
     display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: #C4C4C466;
 }
 
 .photograph-header {
@@ -31,6 +39,7 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    margin-top: 40px;
 }
 
 .modal header {
