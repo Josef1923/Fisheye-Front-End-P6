@@ -8,8 +8,6 @@
        
          // retourner photographers 
          return photographers;
-        
-
 
     }
 
