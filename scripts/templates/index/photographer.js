@@ -1,6 +1,5 @@
 function photographerTemplate(data) {
     const { id, name, portrait, city, country, tagline, price, } = data;
-
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
@@ -8,7 +7,6 @@ function photographerTemplate(data) {
 
         const link = document.createElement('a');
         link.setAttribute('href', `photographer.html?id=${id}`);
-
 
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
