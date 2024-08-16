@@ -1,14 +1,14 @@
 async function getPhotographers() {            
     const response = await fetch('data/photographers.json');
-    const photographers = await response.json();
+    const photographerDispo = await response.json();
     
-    return photographers;
+    return photographerDispo;
 }
 
-async function displayData(photographers) {
+async function displayData(photographerDispo) {
     const photographersSection = document.querySelector(".photographer_section");
 
-    photographers.forEach((photographer) => {
+    photographerDispo.forEach((photographer) => {
         const photographerModel = photographerTemplate(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
