@@ -34,7 +34,7 @@ function photographerTemplate(data) {
         article.appendChild(description);
         article.appendChild(prix)
   
-        return (article);
+        return article;
    
     }
     return { getUserCardDOM }
