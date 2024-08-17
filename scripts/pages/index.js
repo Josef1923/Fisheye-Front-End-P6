@@ -1,11 +1,11 @@
 async function getPhotographers() {            
     const response = await fetch('data/photographers.json');
-    const photographerDispo = await response.json();
-    
+    const photographerDispo = await response.json();    
     return photographerDispo;
 }
 
 async function displayData(photographerDispo) {
+    
     const photographersSection = document.querySelector(".photographer_section");
 
     photographerDispo.forEach((photographer) => {

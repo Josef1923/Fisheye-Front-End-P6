@@ -46,8 +46,7 @@ h1 {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .photographer-location {
@@ -65,4 +64,4 @@ h1 {
   font-size: 1em;
   color: #757575;
   margin-top: -15px;
-}/*# sourceMappingURL=style.css.map */
+}
