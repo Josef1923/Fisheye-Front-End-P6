@@ -44,9 +44,10 @@
 }
 
 .modal header {
-  justify-content: space-between;
   width: 100%;
   position: relative;
+  height: 150px;
+
 }
 
 .modal header img {
@@ -56,10 +57,16 @@
   right: 0;
 }
 
-.modal header h2 {
+.modal header h2  {
   font-size: 64px;
   font-weight: normal;
-  text-align: center;
+  margin-top: -20px;
+}
+
+.modal header p {
+  font-size: 64px;
+  font-weight: normal;
+  margin-top: -60px;
 }
 
 form {

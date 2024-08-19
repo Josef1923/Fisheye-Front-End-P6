@@ -5,6 +5,7 @@ function displayPhotographerData(photographer) {
     const location = document.querySelector('.photographer-location');
     const tagline = document.querySelector('.photographer-tagline');
     const img = document.querySelector('.photographer-img');
+    const photographerNameModal = document.querySelector('#contact_modal p');
 
     
     h1.textContent = photographer.name;
@@ -12,5 +13,6 @@ function displayPhotographerData(photographer) {
     tagline.textContent = photographer.tagline;
     img.setAttribute('src', `assets/photographers/${photographer.portrait}`);
     img.setAttribute('alt', photographer.name);
+    photographerNameModal.textContent = photographer.name;
 }
 
