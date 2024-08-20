@@ -9,7 +9,8 @@ function photographerTemplate(data) {
         link.setAttribute('href', `photographer.html?id=${id}`);
 
         const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
+        img.setAttribute("src", picture);
+        img.setAttribute("alt", `Portrait de ${name}`);
 
         link.appendChild(img);
 
