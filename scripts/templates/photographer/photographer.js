@@ -27,8 +27,7 @@ async function mediaGalleryByID() {
     const  filteredImages = images.filter(media => media.photographerId === photographerID);
     const filteredVideos = videos.filter(media => media.photographerId === photographerID);
     
-    const mediaGallery = document.querySelector('.media-gallery');
-    mediaGallery.innerHTML = ""; 
+    const mediaGallery = document.querySelector('.media-gallery');    
     const mediaPath = `assets/images/${photographer.name}/`;
 
     // Ajouter les images filtrées
