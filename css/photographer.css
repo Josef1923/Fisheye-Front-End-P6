@@ -21,6 +21,10 @@
   margin: 0 100px;
 }
 
+header {
+  margin-top: 43px;
+}
+
 .contact_button {
   font-size: 20px;
   font-weight: bold;
@@ -153,7 +157,6 @@ body {
 .logo {
   width: 200px;
   margin-left: 100px;
-  margin-top: 43px;
   margin-bottom: 43px;
 }
 
