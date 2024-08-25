@@ -209,3 +209,18 @@ body {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
+
+
+dialog.light-box {
+  width: 1250px;
+  height: auto;
+  border: 2px solid #95FFF9;  
+  padding: 20px;
+  display: flex;
+  justify-content: center;  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  
+}

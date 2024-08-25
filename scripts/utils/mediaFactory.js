@@ -9,9 +9,6 @@ async function mediaFactory () {
     const images = media.filter(media => media.image);
     const videos = media.filter(media => media.video);
 
-    return { images, videos }; 
+    return { images, videos}; 
 }
 mediaFactory();
-
-
-

@@ -23,33 +23,49 @@ async function mediaGalleryByID() {
     const { images, videos } = await mediaFactory(); // Appelle mediaFactory pour récupérer les médias
 
     
-    // Filtrer les médias en fonction du photographerID
+    // Filtre médias en fonction du photographerID
     const  filteredImages = images.filter(media => media.photographerId === photographerID);
     const filteredVideos = videos.filter(media => media.photographerId === photographerID);
     
     const mediaGallery = document.querySelector('.media-gallery');    
     const mediaPath = `assets/images/${photographer.name}/`;
 
-    // Ajouter les images filtrées
+    //création de conteneur
+
+    // Ajout images filtrées
     filteredImages.forEach(image => {
-        const imgElement = document.createElement('img');
-        imgElement.setAttribute('src', `${mediaPath}${image.image}`);
-        imgElement.setAttribute('alt', image.title);
-        mediaGallery.appendChild(imgElement);
+        //création de conteneur
+        const conteneur = document.createElement('div');        
+        //création img avec alt
+        const mediaImg = document.createElement('img');
+        mediaImg.setAttribute('src', `${mediaPath}${image.image}`);
+        mediaImg.setAttribute('alt', image.title);
+        conteneur.appendChild(mediaImg);
+        //création titre p
+        const imgTitle = document.createElement('p');
+        imgTitle.textContent = image.title;
+        conteneur.appendChild(imgTitle);
+        //attache au conteneur principal     
+        mediaGallery.appendChild(conteneur);
     });
 
-    // Ajouter les vidéos filtrées
+    // Ajout vidéos filtrées
     filteredVideos.forEach(video => {
-        const videoElement = document.createElement('video');
-        videoElement.setAttribute('controls', 'controls');
-        const sourceElement = document.createElement('source');
-        sourceElement.setAttribute('src', `${mediaPath}${video.video}`);
-        sourceElement.setAttribute('type', 'video/mp4');
-        videoElement.appendChild(sourceElement);
-        mediaGallery.appendChild(videoElement);
+        //création de conteneur
+        const conteneur = document.createElement('div');  
+        //creation video avec alt
+        const mediaVideo = document.createElement('video');
+        mediaVideo.setAttribute('src', `${mediaPath}${video.video}`);
+        mediaVideo.setAttribute('alt', video.title);
+        conteneur.appendChild(mediaVideo);
+        //creation titre p
+        const videoTitle = document.createElement('p');
+        videoTitle.textContent = video.title;
+        conteneur.appendChild(videoTitle);
+        //attache conteneur principal
+        mediaGallery.appendChild(conteneur);        
     });
    
 }
 
-// Appel de la fonction pour afficher les médias
 mediaGalleryByID();
