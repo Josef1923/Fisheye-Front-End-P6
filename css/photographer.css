@@ -199,3 +199,13 @@ body {
     object-fit: cover;
 }
 
+.likes-price {
+  background-color: #DB8876;  
+  position: fixed;
+  width: 400px;
+  height: 80px;
+  bottom: 0;
+  right: 160px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}

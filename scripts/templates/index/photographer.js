@@ -14,7 +14,7 @@ function photographerTemplate(data) {
 
         link.appendChild(img);
 
-        const h2 = document.createElement( 'h2' );
+        const h2 = document.createElement( 'h2' );  
         h2.textContent = name;
         
         const location = document.createElement( 'p' );
