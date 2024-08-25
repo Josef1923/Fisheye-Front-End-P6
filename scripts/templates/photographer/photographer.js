@@ -55,6 +55,7 @@ async function mediaGalleryByID() {
         const conteneur = document.createElement('div');  
         //creation video avec alt
         const mediaVideo = document.createElement('video');
+        mediaVideo.setAttribute('controls', '');
         mediaVideo.setAttribute('src', `${mediaPath}${video.video}`);
         mediaVideo.setAttribute('alt', video.title);
         conteneur.appendChild(mediaVideo);
