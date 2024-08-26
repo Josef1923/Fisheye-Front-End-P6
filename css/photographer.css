@@ -210,16 +210,44 @@ body {
   border-top-left-radius: 5px;
 }
 
-
 dialog.light-box {
   width: 1250px;
   height: auto;
   border: 2px solid #95FFF9;  
   padding: 20px;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);    
+}
+
+#buildLB {
+  max-width: 100%;
+  max-height: 80vh;
+  z-index: 1;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+#left-slide {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  cursor: pointer;
+}
+
+#right-slide {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  cursor: pointer;
+}
+
+#close-slide {
+  position: absolute;
+  top: 20px;
+  right:20px;
+  cursor: pointer;
 }
