@@ -1,3 +1,6 @@
+/**
+*script pour la modal de ocntact
+*/
 const modal = document.getElementById("contact_modal"); 
 const contactButton = document.getElementById("contactButton"); 
 const closeButton = document.getElementById("closeButton"); 
@@ -6,7 +9,6 @@ const last = document.getElementById("last");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
 
-
 contactButton.addEventListener("click", openModal);
 
 function openModal() {
@@ -14,14 +16,12 @@ function openModal() {
   modal.setAttribute("aria-hidden", "false"); 
 }
 
-
 closeButton.addEventListener("click", closeModal);
 
 function closeModal() {
   modal.style.display = "none";
   modal.setAttribute("aria-hidden", "true"); 
 }
-
 
 modal.addEventListener("submit", (event) => {
   event.preventDefault();    

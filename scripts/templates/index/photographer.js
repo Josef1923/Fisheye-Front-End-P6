@@ -1,3 +1,6 @@
+/**
+*Affiche les données photographes index.html
+*/
 function photographerTemplate(data) {
     const { id, name, portrait, city, country, tagline, price, } = data;
     const picture = `assets/photographers/${portrait}`;
@@ -35,8 +38,7 @@ function photographerTemplate(data) {
         article.appendChild(description);
         article.appendChild(prix)
   
-        return article;
-   
+        return article;   
     }
     return { getUserCardDOM }
 }

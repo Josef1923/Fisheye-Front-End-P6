@@ -1,4 +1,11 @@
-// Affiche les données du photographe
+/**
+*Affiche les données photographes dans photographer.html
+*/
+
+/**
+* function displayPhotographerData affiche les données dans main header
+*/
+
 function displayPhotographerData(photographer) {
     
     const h1 = document.querySelector('.photograph-header h1');
@@ -6,7 +13,6 @@ function displayPhotographerData(photographer) {
     const tagline = document.querySelector('.photographer-tagline');
     const img = document.querySelector('.photographer-img');
     const photographerNameModal = document.querySelector('#contact_modal p');
-
     
     h1.textContent = photographer.name;
     location.textContent = `${photographer.city}, ${photographer.country}`;
@@ -14,8 +20,11 @@ function displayPhotographerData(photographer) {
     img.setAttribute('src', `assets/photographers/${photographer.portrait}`);
     img.setAttribute('alt', photographer.name);
     photographerNameModal.textContent = photographer.name;
-}
+};
 
+/**
+* function mediaGalleryByID affiche la gallerie de media main
+*/
 
 async function mediaGalleryByID() {
     const photographerID = getPhotographerId(); // Récupère l'ID du photographe à partir de l'URL
@@ -66,7 +75,5 @@ async function mediaGalleryByID() {
         //attache conteneur principal
         mediaGallery.appendChild(conteneur);        
     });
-   
 }
-
 mediaGalleryByID();

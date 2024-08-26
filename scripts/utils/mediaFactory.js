@@ -1,3 +1,6 @@
+/**
+*Sépare les dia du fichier photographers.JSON
+*/
 async function mediaFactory () {
     const response = await fetch('data/photographers.json');
     if (!response.ok) {
