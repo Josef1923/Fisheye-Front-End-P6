@@ -220,7 +220,8 @@ dialog.light-box {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);    
+  transform: translate(-50%, -50%);
+  display: none;
 }
 
 #buildLB {
@@ -249,5 +250,9 @@ dialog.light-box {
   position: absolute;
   top: 20px;
   right:20px;
+  cursor: pointer;
+}
+
+.lightboxer {
   cursor: pointer;
 }
