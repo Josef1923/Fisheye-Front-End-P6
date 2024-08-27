@@ -19,7 +19,7 @@ function openListener () {
 } 
 
 /**
- * Initialize media gallery with lightbox functionality
+ * Initialise lightbox 
  */
 async function initMediaGallery() {
     await mediaGalleryByID();
