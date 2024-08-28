@@ -30,13 +30,13 @@ async function mediaGalleryByID() {
     const photographerID = getPhotographerId(); // Récupère l'ID du photographe à partir de l'URL
     const photographer = await getPhotographerData(photographerID); // Récupère les données du photographe
     const { images, videos } = await mediaFactory(); // Appelle mediaFactory pour récupérer les médias
-
     
     // Filtre médias en fonction du photographerID
     const  filteredImages = images.filter(media => media.photographerId === photographerID);
     const filteredVideos = videos.filter(media => media.photographerId === photographerID);
     
     const mediaGallery = document.querySelector('.media-gallery');    
+    mediaGallery.innerHTML = ''; // Vide le conteneur avant d'ajouter de nouveaux éléments (affichage doublons sinon)
     const mediaPath = `assets/images/${photographer.name}/`;
 
     // Ajout images filtrées

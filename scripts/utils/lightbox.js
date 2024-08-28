@@ -11,18 +11,20 @@ function lightboxOpener() {
  * function listener d'ouverture lightbox
  */
 function openListener () {
-    const opener = document.querySelectorAll('.lightboxer');
+ const opener = document.querySelectorAll('.lightboxer');
 
-    opener.forEach(media => {
-        media.addEventListener('click', lightboxOpener);
-    });
-} 
+  opener.forEach(media => {
+  media.addEventListener('click', lightboxOpener);
+ });
+}
+
 
 /**
  * function de fermeture lightbox
  */
 function lightboxCloser() {
     const lightbox = document.querySelector('dialog.light-box');
+
     lightbox.style.display = '';
     lightbox.setAttribute('aria-hidden', 'true');
 }
