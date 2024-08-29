@@ -10,12 +10,12 @@ function lightboxOpener() {
 /**
  * function listener d'ouverture lightbox
  */
-function openListener () {
- const opener = document.querySelectorAll('.lightboxer');
+function openListener() {
+    const opener = document.querySelectorAll('.lightboxer');
 
-  opener.forEach(media => {
-  media.addEventListener('click', lightboxOpener);
- });
+    opener.forEach(media => {
+        media.addEventListener('click', lightboxOpener);
+    });
 }
 
 
@@ -41,10 +41,7 @@ function closeListener() {
 /**
  * Initialise lightbox 
  */
-async function initMediaGallery() {
-    await mediaGalleryByID();
+async function initLightbox() {
     openListener();
     closeListener();
 }
-
-initMediaGallery();

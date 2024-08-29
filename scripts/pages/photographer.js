@@ -14,9 +14,16 @@ async function getPhotographerData(id) {
     if (!response.ok) {
         alert("Erreur");
         return;
-    } 
-    const { photographers } = await response.json();  //destructuration objet photographer grace aux {}
-    return photographers.find(photographer => photographer.id === id);
+    }
+    const { photographers, media } = await response.json();  //destructuration objet photographer grace aux {}
+    let photographer = photographers.find(photographer => photographer.id === id);
+
+    photographer = {
+        ...photographer,
+        media: media.filter(medium => medium.photographerId === photographer.id).map(mediaFactory),
+    };
+
+    return photographer;
 }
 
 /**
@@ -26,6 +33,8 @@ async function init() {
     const photographerId = getPhotographerId();
     const photographer = await getPhotographerData(photographerId);
     displayPhotographerData(photographer);
+    displayMediaGalleryByID(photographer);
+    await initLightbox();
 }
 
 init();

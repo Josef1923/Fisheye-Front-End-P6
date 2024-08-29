@@ -1,9 +1,9 @@
 /**
 * Récupère les données du photographe JSON
 */
-async function getPhotographers() {            
+async function getPhotographers() {
     const response = await fetch('data/photographers.json');
-    const photographerDispo = await response.json();    
+    const photographerDispo = await response.json();
     return photographerDispo;
 }
 
@@ -11,7 +11,7 @@ async function getPhotographers() {
  * Affiche les données des photographes sur la page.
  */
 async function displayData(photographerDispo) {
-    
+
     const photographersSection = document.querySelector(".photographer_section");
 
     photographerDispo.forEach((photographer) => {

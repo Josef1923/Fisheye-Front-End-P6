@@ -1,17 +1,40 @@
 /**
-*Sépare les dia du fichier photographers.JSON
+*Sépare les media du fichier photographers.JSON
 */
-async function mediaFactory () {
-    const response = await fetch('data/photographers.json');
-    if (!response.ok) {
-        alert("Erreur");
-        return;
-    } 
-    const { media } = await response.json();
-
-    const images = media.filter(media => media.image);
-    const videos = media.filter(media => media.video);
-
-    return { images, videos}; 
+class media {
+    constructor(id, photographerId, title, likes, date, price) {
+        this.id = id;
+        this.photographerId = photographerId;
+        this.title = title;
+        this.likes = likes;
+        this.date = date;
+        this.price = price;
+    }
 }
-mediaFactory();
+
+class image extends media {
+    constructor(id, photographerId, title, image, likes, date, price) {
+        super(id, photographerId, title, likes, date, price);
+        this.image = image;
+    }
+}
+
+class video extends media {
+    constructor(id, photographerId, title, video, likes, date, price) {
+        super(id, photographerId, title, likes, date, price);
+        this.video = video;
+    }
+}
+
+function mediaFactory(media) {
+
+    if (media.image) {
+        return new image(media.id, media.photographerId, media.title, media.image, media.likes, media.date, media.price);
+    }
+
+    if (media.video) {
+        return new video(media.id, media.photographerId, media.title, media.video, media.likes, media.date, media.price);
+    }
+
+    throw new Error("type media non reconnu");
+}
