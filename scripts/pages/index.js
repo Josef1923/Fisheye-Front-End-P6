@@ -16,7 +16,7 @@ async function displayData(photographerDispo) {
 
     photographerDispo.forEach((photographer) => {
         const photographerModel = photographerTemplate(photographer);
-        const userCardDOM = photographerModel.getUserCardDOM();
+        const userCardDOM = photographerModel.getPhotographerInfo();
         photographersSection.appendChild(userCardDOM);
     });
 }
