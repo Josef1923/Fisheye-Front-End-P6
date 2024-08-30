@@ -9,16 +9,19 @@
 function displayPhotographerData(photographer) {
 
     const h1 = document.querySelector('.photograph-header h1');
-    const location = document.querySelector('.photographer-location');
-    const tagline = document.querySelector('.photographer-tagline');
-    const img = document.querySelector('.photographer-img');
-    const photographerNameModal = document.querySelector('#contact_modal p');
-
     h1.textContent = photographer.name;
+
+    const location = document.querySelector('.photographer-location');
     location.textContent = `${photographer.city}, ${photographer.country}`;
+
+    const tagline = document.querySelector('.photographer-tagline');
     tagline.textContent = photographer.tagline;
+
+    const img = document.querySelector('.photographer-img');
     img.setAttribute('src', `assets/photographers/${photographer.portrait}`);
     img.setAttribute('alt', photographer.name);
+
+    const photographerNameModal = document.querySelector('#contact_modal p');
     photographerNameModal.textContent = photographer.name;
 };
 

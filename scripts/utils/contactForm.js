@@ -1,5 +1,5 @@
 /**
- *script pour la modal de ocntact
+ *script pour la modal de contact
  */
 const modal = document.getElementById("contact_modal");
 const contactButton = document.getElementById("contactButton");

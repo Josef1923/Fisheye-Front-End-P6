@@ -3,6 +3,7 @@
  */
 function lightboxOpener() {
     const lightbox = document.querySelector('dialog.light-box');
+
     lightbox.style.display = 'flex';
     lightbox.setAttribute('aria-hidden', 'false');
 }

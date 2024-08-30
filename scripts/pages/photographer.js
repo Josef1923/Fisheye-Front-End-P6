@@ -34,7 +34,7 @@ async function init() {
     const photographer = await getPhotographerData(photographerId);
     displayPhotographerData(photographer);
     displayMediaGalleryByID(photographer);
-    await initLightbox();
+    initLightbox();
 }
 
 init();
