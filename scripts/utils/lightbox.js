@@ -1,8 +1,16 @@
 /**
  * function d'ouverture de lightbox
  */
-function lightboxOpener() {
+function lightboxOpener(event) {
     const lightbox = document.querySelector('dialog.light-box');
+    const clickedMedia = event.currentTarget;
+
+    const mediaSrc = clickedMedia.getAttribute('src');
+    const mediaAlt = clickedMedia.getAttribute('alt');
+
+    const lightboxMedia = document.getElementById('buildLb');
+    lightboxMedia.setAttribute('src', mediaSrc);
+    lightboxMedia.setAttribute('alt', mediaAlt);
 
     lightbox.style.display = 'flex';
     lightbox.setAttribute('aria-hidden', 'false');
