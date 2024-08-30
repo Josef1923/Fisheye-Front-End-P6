@@ -8,9 +8,22 @@ function lightboxOpener(event) {
     const mediaSrc = clickedMedia.getAttribute('src');
     const mediaAlt = clickedMedia.getAttribute('alt');
 
-    const lightboxMedia = document.getElementById('buildLb');
-    lightboxMedia.setAttribute('src', mediaSrc);
-    lightboxMedia.setAttribute('alt', mediaAlt);
+    const lightboxBuild = document.getElementById('buildLb');
+    lightboxBuild.innerHTML = '';
+
+    let newMediaElement;
+
+    if (clickedMedia.tagName === 'IMG') {
+        newMediaElement = document.createElement('img');
+    } else if (clickedMedia.tagName === 'VIDEO') {
+        newMediaElement = document.createElement('video');
+        newMediaElement.setAttribute('controls', '');
+    }
+
+    newMediaElement.setAttribute('src', mediaSrc);
+    newMediaElement.setAttribute('alt', mediaAlt);
+
+    lightboxBuild.appendChild(newMediaElement);
 
     lightbox.style.display = 'flex';
     lightbox.setAttribute('aria-hidden', 'false');

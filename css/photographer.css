@@ -65,7 +65,7 @@ header {
   right: 0;
 }
 
-.modal header h2  {
+.modal header h2 {
   font-size: 64px;
   font-weight: normal;
   margin-top: -20px;
@@ -129,6 +129,7 @@ body {
   margin-left: 30px;
   margin-bottom: 25px;
 }
+
 .photograph-header h1 {
   color: #D3573C;
   font-size: 64px;
@@ -139,6 +140,7 @@ body {
   font-size: 24px;
   margin-top: -20px;
 }
+
 .photographer-tagline {
   color: #525252;
   font-size: 18px;
@@ -185,22 +187,22 @@ body {
 .media-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px; 
+  gap: 40px;
   justify-content: space-between;
   margin: 100px;
 }
 
 .media-gallery img,
 .media-gallery video {
-    width: 355px;
-    margin-bottom: 30px; 
-    border-radius: 5px; 
-    height: 350px;
-    object-fit: cover;
+  width: 355px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  height: 350px;
+  object-fit: cover;
 }
 
 .likes-price {
-  background-color: #DB8876;  
+  background-color: #DB8876;
   position: fixed;
   width: 400px;
   height: 80px;
@@ -213,7 +215,7 @@ body {
 dialog.light-box {
   width: 1250px;
   height: auto;
-  border: 2px solid #95FFF9;  
+  border: 2px solid #95FFF9;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -224,12 +226,9 @@ dialog.light-box {
   display: none;
 }
 
-#buildLb {
-  max-width: 100%;
-  max-height: 80vh;
-  z-index: 1;
+#buildLb { 
   margin-left: 60px;
-  margin-right: 60px;
+  margin-right: 60px; 
 }
 
 #left-slide {
@@ -249,10 +248,16 @@ dialog.light-box {
 #close-slide {
   position: absolute;
   top: 20px;
-  right:20px;
+  right: 20px;
   cursor: pointer;
 }
 
 .lightboxer {
   cursor: pointer;
 }
+
+#buildLb img,
+#buildLb video {
+  max-width: 100%;
+  max-height: 80vh;
+  }
