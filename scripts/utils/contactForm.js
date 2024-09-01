@@ -1,5 +1,5 @@
 /**
- *script pour la modal de contact
+ * script pour la modal de contact
  */
 const modal = document.getElementById("contact_modal");
 const contactButton = document.getElementById("contactButton");
@@ -12,26 +12,26 @@ const message = document.getElementById("message");
 contactButton.addEventListener("click", openModal);
 
 function openModal() {
-  modal.style.display = "block";
-  modal.setAttribute("aria-hidden", "false");
+    modal.style.display = "block";
+    modal.setAttribute("aria-hidden", "false");
 }
 
 closeButton.addEventListener("click", closeModal);
 
 function closeModal() {
-  modal.style.display = "none";
-  modal.setAttribute("aria-hidden", "true");
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
 }
 
 modal.addEventListener("submit", (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const prénom = first.value;
-  console.log("Prénom:", prénom);
-  const nom = last.value;
-  console.log("Nom:", nom);
-  const mail = email.value;
-  console.log("Email:", mail);
-  const msg = message.value;
-  console.log("Message:", msg);
+    const prénom = first.value;
+    console.log("Prénom:", prénom);
+    const nom = last.value;
+    console.log("Nom:", nom);
+    const mail = email.value;
+    console.log("Email:", mail);
+    const msg = message.value;
+    console.log("Message:", msg);
 });
