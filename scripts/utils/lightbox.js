@@ -2,6 +2,7 @@
  * function d'ouverture de lightbox
  */
 function lightboxOpener(event) {
+    const background = document.querySelector('.background-lightbox');
     const lightbox = document.querySelector('dialog.light-box');
     const clickedMedia = event.currentTarget;
 
@@ -25,6 +26,7 @@ function lightboxOpener(event) {
 
     lightboxBuild.appendChild(newMediaElement);
 
+    background.style.display = 'block';
     lightbox.style.display = 'flex';
     lightbox.setAttribute('aria-hidden', 'false');
 }
@@ -45,10 +47,12 @@ function openListener() {
  * function de fermeture lightbox
  */
 function lightboxCloser() {
+    const background = document.querySelector('.background-lightbox');
     const lightbox = document.querySelector('dialog.light-box');
 
     lightbox.style.display = '';
     lightbox.setAttribute('aria-hidden', 'true');
+    background.style.display = 'none';
 }
 
 /**
