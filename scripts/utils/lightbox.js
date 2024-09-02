@@ -103,3 +103,9 @@ function closeListener() {
 
     closer.addEventListener('click', lightboxCloser);
 }
+
+function lightboxInit() {
+    openListener();
+    slideListener();
+    closeListener();
+}
