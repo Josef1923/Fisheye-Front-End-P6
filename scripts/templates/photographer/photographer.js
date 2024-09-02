@@ -46,6 +46,7 @@ async function displayMediaGalleryByID(photographer) {
             const mediaImg = document.createElement('img');
             mediaImg.setAttribute('src', `${mediaPath}${media.image}`);
             mediaImg.setAttribute('alt', media.title);
+            mediaImg.setAttribute('data-media-id', media.id);
             mediaImg.classList.add('lightboxer');
             conteneur.appendChild(mediaImg);
         } else {
@@ -54,6 +55,7 @@ async function displayMediaGalleryByID(photographer) {
             mediaVideo.setAttribute('controls', '');
             mediaVideo.setAttribute('src', `${mediaPath}${media.video}`);
             mediaVideo.setAttribute('alt', media.title);
+            mediaVideo.setAttribute('data-media-id', media.id);
             mediaVideo.classList.add('lightboxer');
             conteneur.appendChild(mediaVideo);
         }

@@ -8,6 +8,7 @@ function lightboxOpener(event) {
 
     const mediaSrc = clickedMedia.getAttribute('src');
     const mediaAlt = clickedMedia.getAttribute('alt');
+    const mediaId = clickedMedia.getAttribute('data-media-id')
 
     const lightboxBuild = document.getElementById('buildLb');
     lightboxBuild.innerHTML = '';
@@ -23,6 +24,7 @@ function lightboxOpener(event) {
 
     newMediaElement.setAttribute('src', mediaSrc);
     newMediaElement.setAttribute('alt', mediaAlt);
+    newMediaElement.setAttribute('data-media-id', mediaId);
 
     lightboxBuild.appendChild(newMediaElement);
 
