@@ -41,7 +41,7 @@ function buildLightbox(index) {
 
     if (media.tagName === 'IMG') {
         newMediaElement = document.createElement('img');
-    } else if (media.tagName === 'VIDEO') {
+    } if (media.tagName === 'VIDEO') {
         newMediaElement = document.createElement('video');
         newMediaElement.setAttribute('controls', '');
     }
@@ -115,9 +115,9 @@ function closeListener() {
 function keyboardSlide(event) {
     if (event.key === 'ArrowLeft') {
         slideMedia('left');
-    } else if (event.key === 'ArrowRight') {
+    } if (event.key === 'ArrowRight') {
         slideMedia('right');
-    } else if (event.key === 'Escape') {
+    } if (event.key === 'Escape') {
         lightboxCloser();
     }
 }
