@@ -21,6 +21,9 @@ function lightboxOpener(event) {
     background.style.display = 'block';
     lightbox.style.display = 'flex';
     lightbox.setAttribute('aria-hidden', 'false');
+
+    //Ecouteur d'événements pour les touches du clavier
+    document.addEventListener('keydown', keyboardSlide);
 }
 
 /**
@@ -49,13 +52,14 @@ function buildLightbox(index) {
     lightboxBuild.appendChild(newMediaElement);
 }
 
+
 /**
  *Fonction pour slider à gauche ou à droite
  */
 function slideMedia(direction) {
     if (direction === 'left') {
         currentMediaIndex = (currentMediaIndex === 0) ? mediaList.length - 1 : currentMediaIndex - 1;
-    } else if (direction === 'right') {
+    } if (direction === 'right') {
         currentMediaIndex = (currentMediaIndex === mediaList.length - 1) ? 0 : currentMediaIndex + 1;
     }
     buildLightbox(currentMediaIndex);
@@ -93,6 +97,9 @@ function lightboxCloser() {
     lightbox.style.display = '';
     lightbox.setAttribute('aria-hidden', 'true');
     background.style.display = 'none';
+
+    //Ecouteur d'événements pour les touches du clavier (fermeture)
+    document.removeEventListener('keydown', keyboardSlide);
 }
 
 /**
@@ -102,6 +109,17 @@ function closeListener() {
     const closer = document.getElementById('close-slide');
 
     closer.addEventListener('click', lightboxCloser);
+}
+
+// Fonction pour gérer les événements du clavier
+function keyboardSlide(event) {
+    if (event.key === 'ArrowLeft') {
+        slideMedia('left');
+    } else if (event.key === 'ArrowRight') {
+        slideMedia('right');
+    } else if (event.key === 'Escape') {
+        lightboxCloser();
+    }
 }
 
 function lightboxInit() {
