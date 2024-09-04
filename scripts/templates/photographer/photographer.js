@@ -31,7 +31,7 @@ function displayPhotographerData(photographer) {
 
 async function displayMediaGalleryByID(photographer) {
 
-    // Filtre médias en fonction du photographerID
+    // Filtre médium en fonction du photographerID
     const mediaGallery = document.querySelector('.media-gallery');
     mediaGallery.innerHTML = ''; // Vide le conteneur avant d'ajouter de nouveaux éléments (affichage doublons sinon)
     const mediaPath = `assets/images/${photographer.name}/`;
@@ -40,31 +40,61 @@ async function displayMediaGalleryByID(photographer) {
     photographer.media.forEach(media => {
         //création de conteneur
         const conteneur = document.createElement('div');
+        conteneur.classList.add('media-conteneur');
 
         if (media instanceof image) {
             //création img avec alt
-            const mediaImg = document.createElement('img');
-            mediaImg.setAttribute('src', `${mediaPath}${media.image}`);
-            mediaImg.setAttribute('alt', media.title);
-            mediaImg.setAttribute('data-media-id', media.id);
-            mediaImg.classList.add('lightboxer');
-            conteneur.appendChild(mediaImg);
+            mediaElement = document.createElement('img');
+            mediaElement.setAttribute('src', `${mediaPath}${media.image}`);
+            mediaElement.setAttribute('alt', media.title);
+            mediaElement.setAttribute('data-media-id', media.id);
+            mediaElement.classList.add('lightboxer');
         } else {
             //creation video avec alt
-            const mediaVideo = document.createElement('video');
-            mediaVideo.setAttribute('controls', '');
-            mediaVideo.setAttribute('src', `${mediaPath}${media.video}`);
-            mediaVideo.setAttribute('alt', media.title);
-            mediaVideo.setAttribute('data-media-id', media.id);
-            mediaVideo.classList.add('lightboxer');
-            conteneur.appendChild(mediaVideo);
+            mediaElement = document.createElement('video');
+            mediaElement.setAttribute('controls', '');
+            mediaElement.setAttribute('src', `${mediaPath}${media.video}`);
+            mediaElement.setAttribute('alt', media.title);
+            mediaElement.setAttribute('data-media-id', media.id);
+            mediaElement.classList.add('lightboxer');
         }
 
-        //creation titre p
+        conteneur.appendChild(mediaElement);
+
+        // Création du conteneur pour les titre & likes
+        const titleAndLikesContainer = document.createElement('div');
+        titleAndLikesContainer.classList.add('title-likes-container');
+
+        // Titre
         const imgTitle = document.createElement('p');
         imgTitle.textContent = media.title;
-        conteneur.appendChild(imgTitle);
-        //attache conteneur principal
+        imgTitle.classList.add('media-title');
+        titleAndLikesContainer.appendChild(imgTitle);
+
+        // Conteneur likes
+        const likesContainer = document.createElement('div');
+        likesContainer.classList.add('likes-container');
+
+        // Compteur
+        const likeCount = document.createElement('span');
+        likeCount.textContent = media.likes;
+        likeCount.classList.add('like-count');
+        likesContainer.appendChild(likeCount);
+
+        // Icone like svg
+        const likeIcon = document.createElement('img');
+        likeIcon.setAttribute('src', 'assets/icons/like.svg');
+        likeIcon.setAttribute('alt', 'like icon');
+        likeIcon.classList.add('like-icon');
+        likesContainer.appendChild(likeIcon);
+
+        // Ajout du conteneur de likes au conteneur principal
+        titleAndLikesContainer.appendChild(likesContainer);
+
+        // Ajout du conteneur du titre et des likes sous l'image
+        conteneur.appendChild(titleAndLikesContainer);
+
+        // Ajout du conteneur complet à la galerie de médium
         mediaGallery.appendChild(conteneur);
     });
 }

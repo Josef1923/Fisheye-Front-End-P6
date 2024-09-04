@@ -289,3 +289,37 @@ dialog.light-box {
   background: rgba(0, 0, 0, 0.5);
   display: none;
 }
+
+.media-conteneur {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-likes-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -15px;
+}
+
+.likes-container {
+  display: flex;  
+  gap: 5px;
+}
+
+.like-count {
+  font-size: 18px;  
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.like-icon {
+  width: 20px !important;
+  height: 20px !important;
+  cursor: pointer;
+}
+
+.media-title {
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 0;
+}
