@@ -299,6 +299,7 @@ dialog.light-box {
   display: flex;
   justify-content: space-between;
   margin-top: -15px;
+  color : #901C1C;
 }
 
 .likes-container {
