@@ -107,8 +107,10 @@ function lightboxCloser() {
 */
 function closeListener() {
     const closer = document.getElementById('close-slide');
+    const closer2 = document.querySelector('.background-lightbox');
 
     closer.addEventListener('click', lightboxCloser);
+    closer2.addEventListener('click', lightboxCloser);
 }
 
 // Fonction pour gérer les événements du clavier

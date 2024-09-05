@@ -233,7 +233,7 @@ dialog.light-box {
   width: 90%;
   max-width: 1250px;
   height: auto;
-  border: 2px solid #95FFF9;
+  border: none;
   padding: 20px;
   display: flex;
   justify-content: center;
