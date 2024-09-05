@@ -1,7 +1,7 @@
 /**
 *Sépare les media du fichier photographers.JSON
 */
-class media {
+class Media {
     constructor(id, photographerId, title, likes, date, price) {
         this.id = id;
         this.photographerId = photographerId;
@@ -12,14 +12,14 @@ class media {
     }
 }
 
-class image extends media {
+class Image extends Media {
     constructor(id, photographerId, title, image, likes, date, price) {
         super(id, photographerId, title, likes, date, price);
         this.image = image;
     }
 }
 
-class video extends media {
+class Video extends Media {
     constructor(id, photographerId, title, video, likes, date, price) {
         super(id, photographerId, title, likes, date, price);
         this.video = video;
@@ -29,11 +29,11 @@ class video extends media {
 function mediaFactory(media) {
 
     if (media.image) {
-        return new image(media.id, media.photographerId, media.title, media.image, media.likes, media.date, media.price);
+        return new Image(media.id, media.photographerId, media.title, media.image, media.likes, media.date, media.price);
     }
 
     if (media.video) {
-        return new video(media.id, media.photographerId, media.title, media.video, media.likes, media.date, media.price);
+        return new Video(media.id, media.photographerId, media.title, media.video, media.likes, media.date, media.price);
     }
 
     throw new Error("type media non reconnu");

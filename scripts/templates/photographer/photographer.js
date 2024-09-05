@@ -44,7 +44,7 @@ function photographerPageTemplate(photographer) {
             const container = document.createElement('div');
             container.classList.add('media-container');
 
-            if (media instanceof image) {
+            if (media instanceof Image) {
                 //création img avec alt
                 mediaElement = document.createElement('img');
                 mediaElement.setAttribute('src', `${mediaPath}${media.image}`);
