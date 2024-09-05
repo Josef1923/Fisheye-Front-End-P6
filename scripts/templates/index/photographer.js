@@ -28,15 +28,15 @@ function photographerTemplate(data) {
         description.textContent = tagline;
         description.classList.add('photographer-description');
 
-        const prix = document.createElement('p');
-        prix.textContent = `${price} €/jour`;
-        prix.classList.add('photographer-prix');
+        const prices = document.createElement('p');
+        prices.textContent = `${price} €/jour`;
+        prices.classList.add('photographer-prices');
 
         article.appendChild(link);
         article.appendChild(h2);
         article.appendChild(location);
         article.appendChild(description);
-        article.appendChild(prix)
+        article.appendChild(prices);
 
         return article;
     }

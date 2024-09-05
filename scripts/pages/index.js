@@ -1,20 +1,20 @@
 /**
-* Récupère les données du photographe JSON
+* Récupère les données du photographe JSON photographerDispo
 */
 async function getPhotographers() {
     const response = await fetch('data/photographers.json');
-    const photographerDispo = await response.json();
-    return photographerDispo;
+    const photographersAvaible = await response.json();
+    return photographersAvaible;
 }
 
 /**
  * Affiche les données des photographes sur la page.
  */
-async function displayData(photographerDispo) {
+async function displayData(photographersAvaible) {
 
     const photographersSection = document.querySelector(".photographer_section");
 
-    photographerDispo.forEach((photographer) => {
+    photographersAvaible.forEach((photographer) => {
         const photographerModel = photographerTemplate(photographer);
         const userCardDOM = photographerModel.getPhotographerInfo();
         photographersSection.appendChild(userCardDOM);

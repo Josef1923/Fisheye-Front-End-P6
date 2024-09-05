@@ -290,7 +290,7 @@ dialog.light-box {
   display: none;
 }
 
-.media-conteneur {
+.media-container {
   display: flex;
   flex-direction: column;
 }

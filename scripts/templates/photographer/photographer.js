@@ -39,8 +39,8 @@ async function displayMediaGalleryByID(photographer) {
     // Ajout images filtrées
     photographer.media.forEach(media => {
         //création de conteneur
-        const conteneur = document.createElement('div');
-        conteneur.classList.add('media-conteneur');
+        const container = document.createElement('div');
+        container.classList.add('media-container');
 
         if (media instanceof image) {
             //création img avec alt
@@ -59,7 +59,7 @@ async function displayMediaGalleryByID(photographer) {
             mediaElement.classList.add('lightboxer');
         }
 
-        conteneur.appendChild(mediaElement);
+        container.appendChild(mediaElement);
 
         // Création du conteneur pour les titre & likes
         const titleAndLikesContainer = document.createElement('div');
@@ -92,9 +92,9 @@ async function displayMediaGalleryByID(photographer) {
         titleAndLikesContainer.appendChild(likesContainer);
 
         // Ajout du conteneur du titre et des likes sous l'image
-        conteneur.appendChild(titleAndLikesContainer);
+        container.appendChild(titleAndLikesContainer);
 
         // Ajout du conteneur complet à la galerie de médium
-        mediaGallery.appendChild(conteneur);
+        mediaGallery.appendChild(container);
     });
 }
