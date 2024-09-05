@@ -3,14 +3,18 @@
 */
 async function getPhotographers() {
     const response = await fetch('data/photographers.json');
-    const photographersAvaible = await response.json();
-    return photographersAvaible;
+
+    if (!response.ok) {
+        return alert("Error");
+    }
+
+    return await response.json();
 }
 
 /**
  * Affiche les données des photographes sur la page.
  */
-async function displayData(photographersAvaible) {
+function displayData(photographersAvaible) {
 
     const photographersSection = document.querySelector(".photographer_section");
 

@@ -11,10 +11,11 @@ function getPhotographerId() {
 */
 async function getPhotographerData(id) {
     const response = await fetch('data/photographers.json');
+
     if (!response.ok) {
-        alert("Erreur");
-        return;
+        return alert("Erreur");
     }
+
     const { photographers, media } = await response.json();  //destructuration objet photographer grace aux {}
     let photographer = photographers.find(photographer => photographer.id === id);
 
@@ -32,8 +33,9 @@ async function getPhotographerData(id) {
 async function init() {
     const photographerId = getPhotographerId();
     const photographer = await getPhotographerData(photographerId);
-    displayPhotographerData(photographer);
-    displayMediaGalleryByID(photographer);
-    lightboxInit()
+    const photographerPage = photographerPageTemplate(photographer);
+    photographerPage.displayPhotographerData();  // Affiche les données du photographe
+    photographerPage.displayMediaGallery()
+    lightboxInit();
 }
-init();
+init()
