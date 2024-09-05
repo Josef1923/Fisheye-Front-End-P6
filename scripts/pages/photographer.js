@@ -21,7 +21,7 @@ async function getPhotographerData(id) {
 
     photographer = {
         ...photographer,
-        media: media.filter(medium => medium.photographerId === photographer.id).map(mediaFactory),
+        media: media.filter(medium => medium.photographerId === photographer.id).map(Media.create),
     };
 
     return photographer;
@@ -34,7 +34,7 @@ async function init() {
     const photographerId = getPhotographerId();
     const photographer = await getPhotographerData(photographerId);
     const photographerPage = photographerPageTemplate(photographer);
-    photographerPage.displayPhotographerData();  // Affiche les données du photographe
+    photographerPage.displayPhotographerData();
     photographerPage.displayMediaGallery()
     lightboxInit();
 }

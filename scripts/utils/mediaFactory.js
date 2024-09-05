@@ -10,6 +10,19 @@ class Media {
         this.date = date;
         this.price = price;
     }
+
+    static create(media) {
+
+        if (media.image) {
+            return new Image(media.id, media.photographerId, media.title, media.image, media.likes, media.date, media.price);
+        }
+
+        if (media.video) {
+            return new Video(media.id, media.photographerId, media.title, media.video, media.likes, media.date, media.price);
+        }
+
+        throw new Error("type media non reconnu");
+    }
 }
 
 class Image extends Media {
@@ -26,15 +39,3 @@ class Video extends Media {
     }
 }
 
-function mediaFactory(media) {
-
-    if (media.image) {
-        return new Image(media.id, media.photographerId, media.title, media.image, media.likes, media.date, media.price);
-    }
-
-    if (media.video) {
-        return new Video(media.id, media.photographerId, media.title, media.video, media.likes, media.date, media.price);
-    }
-
-    throw new Error("type media non reconnu");
-}
