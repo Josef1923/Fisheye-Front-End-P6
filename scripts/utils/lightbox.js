@@ -73,8 +73,15 @@ function slideListener() {
     const leftSlide = document.getElementById('left-slide');
     const rightSlide = document.getElementById('right-slide');
 
-    leftSlide.addEventListener('click', () => slideMedia('left'));
-    rightSlide.addEventListener('click', () => slideMedia('right'));
+    leftSlide.addEventListener('click', (event) => {
+        event.stopPropagation();
+        slideMedia('left');
+    });
+
+    rightSlide.addEventListener('click', (event) => {
+        event.stopPropagation();
+        slideMedia('right');
+    });
 }
 
 /**
