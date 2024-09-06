@@ -10,20 +10,41 @@ function photographerPageTemplate(photographer) {
     */
 
     function displayPhotographerData() {
+        // Sélectionne le conteneur où le contenu sera injecté
+        const photographHeader = document.querySelector('.photograph-header');
 
-        const h1 = document.querySelector('.photograph-header h1');
+        // Crée l'élément div photographer-info
+        const photographerInfoDiv = document.createElement('div');
+        photographerInfoDiv.classList.add('photographer-info');
+
+        // Crée et ajoute l'élément h1
+        const h1 = document.createElement('h1');
         h1.textContent = name;
+        photographerInfoDiv.appendChild(h1);
 
-        const location = document.querySelector('.photographer-location');
-        location.textContent = `${city}, ${country}`;
+        // Crée et ajoute l'élément p pour la location
+        const locationP = document.createElement('p');
+        locationP.classList.add('photographer-location');
+        locationP.textContent = `${city}, ${country}`;
+        photographerInfoDiv.appendChild(locationP);
 
-        const tag = document.querySelector('.photographer-tagline');
-        tag.textContent = tagline;
+        // Crée et ajoute l'élément p pour la tagline
+        const taglineP = document.createElement('p');
+        taglineP.classList.add('photographer-tagline');
+        taglineP.textContent = tagline;
+        photographerInfoDiv.appendChild(taglineP);
 
-        const img = document.querySelector('.photographer-img');
-        img.setAttribute('src', picture);
-        img.setAttribute('alt', name);
+        // Ajoute photographer-info dans le conteneur .photograph-header
+        photographHeader.insertBefore(photographerInfoDiv, photographHeader.firstChild);
 
+        // Crée et ajoute l'image du photographe
+        const photographerImg = document.createElement('img');
+        photographerImg.classList.add('photographer-img');
+        photographerImg.setAttribute('src', picture);
+        photographerImg.setAttribute('alt', name);
+        photographHeader.appendChild(photographerImg);
+
+        // Met à jour le nom du photographe dans le modal de contact
         const photographerNameModal = document.querySelector('#contact_modal p');
         photographerNameModal.textContent = name;
     };
