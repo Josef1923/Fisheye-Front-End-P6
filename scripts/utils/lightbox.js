@@ -22,6 +22,11 @@ function lightboxOpener(event) {
     lightbox.style.display = 'flex';
     lightbox.setAttribute('aria-hidden', 'false');
 
+    // Fonction pour eviter la femreture de lightbox en cliquant sur celle ci à la premiere ouverture
+    lightbox.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+
     //Ecouteur d'événements pour les touches du clavier
     document.addEventListener('keydown', keyboardSlide);
 }
