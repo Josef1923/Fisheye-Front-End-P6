@@ -5,6 +5,9 @@ function photographerPageTemplate(photographer) {
     const { name, city, country, tagline, portrait, media } = photographer;
     const picture = `assets/photographers/${portrait}`;
 
+    //compteur de like
+    let totalLikes = media.reduce((total, item) => total + item.likes, 0);
+
     /**
     * Affiche les données photographes photographer.html
     */
@@ -47,6 +50,14 @@ function photographerPageTemplate(photographer) {
         // Met à jour le nom du photographe dans le modal de contact
         const photographerNameModal = document.querySelector('#contact_modal p');
         photographerNameModal.textContent = name;
+
+        //Affichage total de likes initial
+        const totalLikesBox = document.querySelector('.total-likes');
+        totalLikesBox.textContent = totalLikes;
+
+        // Met à jour le prix journalier
+        const dailyPrice = document.querySelector('.daily-price');
+        dailyPrice.textContent = `${photographer.price} € / jour`;
     };
 
     /**
@@ -117,6 +128,8 @@ function photographerPageTemplate(photographer) {
                 counter += 1;
                 likeCount.textContent = counter;
                 likeIcon.classList.add('disabled');
+                totalLikes += 1;
+                document.querySelector('.total-likes').textContent = totalLikes;
             });
 
             // Ajout du conteneur de likes au conteneur principal

@@ -221,10 +221,10 @@ body {
 .likes-price {
   background-color: #DB8876;
   position: fixed;
-  width: 400px;
+  width: 350px;
   height: 80px;
   bottom: 0;
-  right: 160px;
+  right: 230px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
@@ -299,7 +299,7 @@ dialog.light-box {
   display: flex;
   justify-content: space-between;
   margin-top: -15px;
-  color : #901C1C;
+  color : #901C1C
 }
 
 .likes-container {
@@ -327,4 +327,21 @@ dialog.light-box {
 
 .disabled {
   pointer-events: none;
+}
+
+.likes-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 24px;
+  font-weight: 600;
+  gap: 20px;
+}
+
+.left-section {
+  display: flex;
+  align-self: center;
+  gap: 10px;  
 }
