@@ -78,13 +78,11 @@ function slideListener() {
     const leftSlide = document.getElementById('left-slide');
     const rightSlide = document.getElementById('right-slide');
 
-    leftSlide.addEventListener('click', (event) => {
-        event.stopPropagation();
+    leftSlide.addEventListener('click', () => {
         slideMedia('left');
     });
 
-    rightSlide.addEventListener('click', (event) => {
-        event.stopPropagation();
+    rightSlide.addEventListener('click', () => {
         slideMedia('right');
     });
 }
@@ -113,11 +111,6 @@ function lightboxCloser() {
 
     //Ecouteur d'événements pour les touches du clavier (fermeture)
     document.removeEventListener('keydown', keyboardSlide);
-
-    //Empêche la fermeture de la lightbox au click des slides
-    lightbox.addEventListener('click', (event) => {
-        event.stopPropagation();  // Empêche la fermeture de la lightbox
-    });
 }
 
 /**
