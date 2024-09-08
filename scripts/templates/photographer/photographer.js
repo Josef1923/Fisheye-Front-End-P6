@@ -111,6 +111,14 @@ function photographerPageTemplate(photographer) {
             likeIcon.classList.add('like-icon');
             likesContainer.appendChild(likeIcon);
 
+            //Function listeneur ajout de like + compteur de likes
+            likeIcon.addEventListener('click', () => {
+                let counter = parseInt(likeCount.textContent);
+                counter += 1;
+                likeCount.textContent = counter;
+                likeIcon.classList.add('disabled');
+            });
+
             // Ajout du conteneur de likes au conteneur principal
             titleAndLikesContainer.appendChild(likesContainer);
 

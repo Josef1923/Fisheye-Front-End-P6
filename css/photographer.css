@@ -324,3 +324,7 @@ dialog.light-box {
   font-weight: 300;
   margin-top: 0;
 }
+
+.disabled {
+  pointer-events: none;
+}
