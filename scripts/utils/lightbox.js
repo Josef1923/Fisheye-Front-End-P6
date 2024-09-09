@@ -124,7 +124,9 @@ function closeListener() {
     closer2.addEventListener('click', lightboxCloser);
 }
 
-// Fonction pour gérer les événements du clavier
+/**
+ *Fonction pour gérer les événements du clavier
+ */
 function keyboardSlide(event) {
     if (event.key === 'ArrowLeft') {
         slideMedia('left');
@@ -133,6 +135,13 @@ function keyboardSlide(event) {
     } if (event.key === 'Escape') {
         lightboxCloser();
     }
+}
+
+/**
+* fonction de rafraichissement lightbox apres tri medium
+*/
+function refreshLightbox() {
+    openListener();
 }
 
 function lightboxInit() {

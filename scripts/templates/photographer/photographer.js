@@ -167,6 +167,8 @@ function photographerPageTemplate(photographer) {
 
             // Ajout du conteneur complet à la galerie de médium
             mediaGallery.appendChild(container);
+
+            refreshLightbox();
         });
     }
 
