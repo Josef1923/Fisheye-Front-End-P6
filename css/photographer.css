@@ -201,6 +201,12 @@ body {
   padding-left: 15px;
 }
 
+.choice-list:hover {
+  background-color: #DB8876;
+  color: black;
+}
+
+
 .media-gallery {
   display: flex;
   flex-wrap: wrap;

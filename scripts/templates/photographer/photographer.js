@@ -61,6 +61,25 @@ function photographerPageTemplate(photographer) {
     };
 
     /**
+     * fonction de tri medium
+     */
+    function mediumSorting(media, type) {
+        if (type === 'Popularité') {
+            return media.sort((a, b) => b.likes - a.likes);
+        }
+
+        if (type === 'Date') {
+            return media.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+
+        if (type === 'Titre') {
+            return media.sort((a, b) => a.title.localeCompare(b.title))
+        }
+
+        return media
+    };
+
+    /**
     * function mediaGalleryByID affiche la gallerie de media main
     */
     async function displayMediaGallery() {
@@ -68,10 +87,18 @@ function photographerPageTemplate(photographer) {
         // Filtre médium en fonction du photographerID
         const mediaGallery = document.querySelector('.media-gallery');
         mediaGallery.innerHTML = ''; // Vide le conteneur avant d'ajouter de nouveaux éléments (affichage doublons sinon)
+
+        //Pas de valeur de tri au lancement
+        const sortZone = document.getElementById('choice');
+        const sortType = sortZone ? sortZone.value : '';
+
+        //Applique un tri si demandé
+        const sortedMedium = sortType ? mediumSorting([...media], sortType) : media;
+
         const mediaPath = `assets/images/${name}/`;
 
         // Ajout images filtrées
-        media.forEach(media => {
+        sortedMedium.forEach(media => {
             //création de conteneur
             const container = document.createElement('div');
             container.classList.add('media-container');
@@ -142,6 +169,12 @@ function photographerPageTemplate(photographer) {
             mediaGallery.appendChild(container);
         });
     }
+
+    //listener pour le tri
+    document.getElementById('choice').addEventListener('change', () => {
+        displayMediaGallery(); // Pour relancer la function avec le tri selectionné
+    });
+
     // Retourne les méthodes publiques pour manipuler les données du photographe
     return {
         displayPhotographerData,
