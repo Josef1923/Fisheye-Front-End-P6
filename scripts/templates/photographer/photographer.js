@@ -111,6 +111,7 @@ function photographerPageTemplate(photographer) {
                 mediaElement.setAttribute('data-media-id', media.id);
                 mediaElement.classList.add('lightboxer');
             } else {
+
                 //creation video avec alt
                 mediaElement = document.createElement('video');
                 mediaElement.setAttribute('controls', '');

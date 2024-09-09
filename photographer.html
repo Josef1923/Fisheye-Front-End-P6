@@ -12,16 +12,17 @@
 <body>
     <div class="main-container">
         <header>
-            <a href="index.html" aria-label="Retour à l'accueil">
+            <a href="index.html" aria-label="Retour à l'accueil" role="img" aria-labelledby="fisheye-home-page">
                 <img src="assets/images/logo.png" class="logo" alt="fisheye logo">
             </a>
+            <span id="fisheye-home-page" class="sr-only"></span>
         </header>
         <main id="main">
             <div class="photograph-header">
-                <button id="contactButton" class="contact_button">Contactez-moi</button>
+                <button id="contactButton" class="contact_button" aria-label="Contact Me" role="button">Contactez-moi</button>
             </div>
             <div class="sort">
-                <label class="choice">Trier par</label>
+                <label for="choice" class="choice">Trier par</label>
                 <select class="choice-list" id="choice" name="choice">
                     <option value="Popularité">Popularité</option>
                     <option value="Date">Date</option>
