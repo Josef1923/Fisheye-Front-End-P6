@@ -54,7 +54,13 @@ function buildLightbox(index) {
     newMediaElement.setAttribute('src', mediaSrc);
     newMediaElement.setAttribute('alt', mediaAlt);
 
+    // Création de l'élément texte pour le titre (statique)
+    const titleElement = document.createElement('p');
+    titleElement.textContent = mediaAlt;
+    titleElement.classList.add('media-title-lightbox');
+
     lightboxBuild.appendChild(newMediaElement);
+    lightboxBuild.appendChild(titleElement);
 }
 
 
