@@ -70,10 +70,10 @@ header {
   right: 0;
 }
 
-.modal header h2 {
+.modal header h1 {
   font-size: 64px;
   font-weight: normal;
-  margin-top: -20px;
+  margin-top: -40px;
 }
 
 .modal header p {

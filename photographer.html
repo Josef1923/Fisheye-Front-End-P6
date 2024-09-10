@@ -49,30 +49,30 @@
         </dialog>
     </div>
     <div id="contact_modal">
-        <div class="modal">
+        <div class="modal" role="dialog" aria-labelledby="modal-title">
             <header>
-                <h2>Contactez-moi</h2>
+                <h1>Contactez-moi</h1>
                 <p></p>
-                <img id="closeButton" src="assets/icons/close.svg" alt="fermer le formulaire de contact">
+                <img id="closeButton" src="assets/icons/close.svg" alt="Close Contact form" aria-label="Close contact form" role="button">
             </header>
             <form>
                 <div>
-                    <label for="first">Prénom</label>
-                    <input class="text-control" type="text" id="first">
+                    <label for="first" id="label-first">Prénom</label>
+                    <input class="text-control" type="text" id="first" aria-labelledby="label-first" aria-label="First name">
                 </div>
                 <div>
-                    <label for="last">Nom</label>
-                    <input class="text-control" type="text" id="last">
+                    <label for="last" id="label-last">Nom</label>
+                    <input class="text-control" type="text" id="last" aria-labelledby="label-last" aria-label="Last name">
                 </div>
                 <div>
-                    <label for="email">Email</label>
-                    <input class="text-control" type="email" id="email">
+                    <label for="email" id="label-mail">Email</label>
+                    <input class="text-control" type="email" id="email" aria-labelledby="label-mail" aria-label="Email">
                 </div>
                 <div>
-                    <label for="message">Votre message</label>
-                    <textarea class="text-control" id="message"></textarea>
+                    <label for="message" id="label-message">Votre message</label>
+                    <textarea class="text-control" id="message" aria-labelledby="label-massage" aria-label="Your message"></textarea>
                 </div>
-                <button class="send_button">Envoyer</button>
+                <button class="send_button" aria-label="Close contact form">Envoyer</button>
             </form>
         </div>
     </div>
