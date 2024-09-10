@@ -12,18 +12,17 @@
 <body>
     <div class="main-container">
         <header>
-            <a href="index.html" aria-label="Retour à l'accueil" role="img" aria-labelledby="fisheye-home-page">
-                <img src="assets/images/logo.png" class="logo" alt="fisheye logo">
+            <a href="index.html" aria-label="Fisheye Home page">
+                <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page">
             </a>
-            <span id="fisheye-home-page" class="sr-only"></span>
         </header>
         <main id="main">
             <div class="photograph-header">
-                <button id="contactButton" class="contact_button" aria-label="Contact Me" role="button">Contactez-moi</button>
+                <button id="contactButton" class="contact_button" aria-label="Contact Me">Contactez-moi</button>
             </div>
             <div class="sort">
-                <label for="choice" class="choice">Trier par</label>
-                <select class="choice-list" id="choice" name="choice">
+                <label for="choice" class="choice" id="order-by-label">Trier par</label>
+                <select class="choice-list" id="choice" name="choice" aria-labelledby="order-by-label">
                     <option value="Popularité">Popularité</option>
                     <option value="Date">Date</option>
                     <option value="Titre">Titre</option>
@@ -35,7 +34,7 @@
             <div class="likes-price">
                 <div class="left-section">
                     <span class="total-likes"></span>
-                    <img src="assets/icons/totalLike.svg" alt="Total likes icon">
+                    <img src="assets/icons/totalLike.svg" alt="">
                 </div>
                 <span class="daily-price"></span>
             </div>            

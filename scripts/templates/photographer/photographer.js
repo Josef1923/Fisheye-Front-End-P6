@@ -107,7 +107,7 @@ function photographerPageTemplate(photographer) {
                 //création img avec alt
                 mediaElement = document.createElement('img');
                 mediaElement.setAttribute('src', `${mediaPath}${media.image}`);
-                mediaElement.setAttribute('alt', media.title);
+                mediaElement.setAttribute('alt', `${media.title}, closeup view`);
                 mediaElement.setAttribute('data-media-id', media.id);
                 mediaElement.classList.add('lightboxer');
             } else {
@@ -116,7 +116,7 @@ function photographerPageTemplate(photographer) {
                 mediaElement = document.createElement('video');
                 mediaElement.setAttribute('controls', '');
                 mediaElement.setAttribute('src', `${mediaPath}${media.video}`);
-                mediaElement.setAttribute('alt', media.title);
+                mediaElement.setAttribute('alt', `${media.title}, closeup view`);
                 mediaElement.setAttribute('data-media-id', media.id);
                 mediaElement.classList.add('lightboxer');
             }
@@ -146,7 +146,7 @@ function photographerPageTemplate(photographer) {
             // Icone like svg
             const likeIcon = document.createElement('img');
             likeIcon.setAttribute('src', 'assets/icons/like.svg');
-            likeIcon.setAttribute('alt', 'like icon');
+            likeIcon.setAttribute('alt', 'like');
             likeIcon.classList.add('like-icon');
             likesContainer.appendChild(likeIcon);
 
