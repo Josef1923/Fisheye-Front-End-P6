@@ -8,6 +8,7 @@ const first = document.getElementById("first");
 const last = document.getElementById("last");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
+const form = document.querySelector("#contact_modal form");
 
 contactButton.addEventListener("click", openModal);
 
@@ -23,7 +24,7 @@ function closeModal() {
     modal.setAttribute("aria-hidden", "true");
 }
 
-modal.addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const prénom = first.value;
@@ -34,4 +35,6 @@ modal.addEventListener("submit", (event) => {
     console.log("Email:", mail);
     const msg = message.value;
     console.log("Message:", msg);
+
+    closeModal();
 });

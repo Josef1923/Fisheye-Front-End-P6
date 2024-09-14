@@ -178,6 +178,7 @@ function photographerPageTemplate(photographer) {
         displayMediaGallery(); // Pour relancer la function avec le tri selectionné
     });
 
+
     // Retourne les méthodes publiques pour manipuler les données du photographe
     return {
         displayPhotographerData,
