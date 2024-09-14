@@ -37,11 +37,11 @@ async function init() {
     photographerPage.displayPhotographerData();
     photographerPage.displayMediaGallery()
 
-    // Ajouter un écouteur d'événement pour la sélection de tri
+    // Ajouter un écouteur d'événement pour la sélection de tri pour rafraîchir la galerie quand le tri change
     const sortZone = document.getElementById('choice');
     if (sortZone) {
         sortZone.addEventListener('change', () => {
-            photographerPage.displayMediaGallery();  // Rafraîchir la galerie quand le tri change
+            photographerPage.displayMediaGallery();
         });
     }
 

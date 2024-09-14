@@ -15,6 +15,7 @@ contactButton.addEventListener("click", openModal);
 function openModal() {
     modal.style.display = "block";
     modal.setAttribute("aria-hidden", "false");
+    document.addEventListener("keydown", handleKeyPress);
 }
 
 closeButton.addEventListener("click", closeModal);
@@ -22,6 +23,7 @@ closeButton.addEventListener("click", closeModal);
 function closeModal() {
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
+    document.removeEventListener("keydown", handleKeyPress);
 }
 
 form.addEventListener("submit", (event) => {
@@ -38,3 +40,10 @@ form.addEventListener("submit", (event) => {
 
     closeModal();
 });
+
+// Fonction pour gérer la fermeture avec la touche Échap
+function handleKeyPress(event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
+}
