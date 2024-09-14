@@ -15,6 +15,10 @@ contactButton.addEventListener("click", openModal);
 function openModal() {
     modal.style.display = "block";
     modal.setAttribute("aria-hidden", "false");
+
+    // Met le focus directement sur le champ "Prénom"
+    first.focus();
+
     document.addEventListener("keydown", handleKeyPress);
 }
 
