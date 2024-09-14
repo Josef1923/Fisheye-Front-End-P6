@@ -173,12 +173,6 @@ function photographerPageTemplate(photographer) {
         });
     }
 
-    //listener pour le tri
-    document.getElementById('choice').addEventListener('change', () => {
-        displayMediaGallery(); // Pour relancer la function avec le tri selectionné
-    });
-
-
     // Retourne les méthodes publiques pour manipuler les données du photographe
     return {
         displayPhotographerData,

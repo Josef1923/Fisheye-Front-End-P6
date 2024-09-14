@@ -36,6 +36,15 @@ async function init() {
     const photographerPage = photographerPageTemplate(photographer);
     photographerPage.displayPhotographerData();
     photographerPage.displayMediaGallery()
+
+    // Ajouter un écouteur d'événement pour la sélection de tri
+    const sortZone = document.getElementById('choice');
+    if (sortZone) {
+        sortZone.addEventListener('change', () => {
+            photographerPage.displayMediaGallery();  // Rafraîchir la galerie quand le tri change
+        });
+    }
+
     lightboxInit();
 }
 init()
