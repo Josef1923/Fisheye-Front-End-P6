@@ -109,6 +109,7 @@ function photographerPageTemplate(photographer) {
                 mediaElement.setAttribute('src', `${mediaPath}${media.image}`);
                 mediaElement.setAttribute('alt', `${media.title}, closeup view`);
                 mediaElement.setAttribute('data-media-id', media.id);
+                mediaElement.setAttribute('tabindex', '0');
                 mediaElement.classList.add('lightboxer');
             } else {
 
