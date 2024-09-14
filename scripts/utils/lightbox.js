@@ -101,6 +101,13 @@ function openListener() {
 
     opener.forEach(media => {
         media.addEventListener('click', lightboxOpener);
+
+        // Ouvrir la lightbox en appuyant sur Entrée
+        media.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                lightboxOpener(event);
+            }
+        });
     });
 }
 
