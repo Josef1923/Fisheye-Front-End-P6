@@ -302,6 +302,7 @@ dialog.light-box {
 }
 
 .media-container {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -355,4 +356,14 @@ dialog.light-box {
   display: flex;
   align-self: center;
   gap: 10px;  
+}
+
+.video-play-icon {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px !important;
+  height: 150px !important;
+  pointer-events: none;
 }

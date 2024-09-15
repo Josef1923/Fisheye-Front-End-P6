@@ -111,18 +111,28 @@ function photographerPageTemplate(photographer) {
                 mediaElement.setAttribute('data-media-id', media.id);
                 mediaElement.setAttribute('tabindex', '0');
                 mediaElement.classList.add('lightboxer');
-            } else {
 
+                container.appendChild(mediaElement);
+            } else {
                 //creation video avec alt
                 mediaElement = document.createElement('video');
-                mediaElement.setAttribute('controls', '');
                 mediaElement.setAttribute('src', `${mediaPath}${media.video}`);
                 mediaElement.setAttribute('alt', `${media.title}, closeup view`);
                 mediaElement.setAttribute('data-media-id', media.id);
+                mediaElement.setAttribute('tabindex', '0');
                 mediaElement.classList.add('lightboxer');
+                // Ajout svg play sur vidéo
+                const playSvg = document.createElement('img');
+                playSvg.setAttribute('src', 'assets/icons/play.svg');
+                playSvg.setAttribute('alt', 'Play button');
+                playSvg.classList.add('video-play-icon');
+                // Ajouter le SVG dans le même conteneur que la vidéo
+                container.appendChild(mediaElement);
+                container.appendChild(playSvg);
+
             }
 
-            container.appendChild(mediaElement);
+
 
             // Création du conteneur pour les titre & likes
             const titleAndLikesContainer = document.createElement('div');
