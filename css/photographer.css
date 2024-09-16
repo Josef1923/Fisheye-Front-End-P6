@@ -62,6 +62,8 @@ header {
   width: 100%;
   position: relative;
   height: 180px;
+  display: flex;
+  flex-direction: column; 
 }
 
 .modal header img {
@@ -74,13 +76,13 @@ header {
 .modal header h1 {
   font-size: 64px;
   font-weight: normal;
-  margin-top: -40px;
+  margin-top: -25px;
 }
 
 .modal header p {
   font-size: 64px;
   font-weight: normal;
-  margin-top: -60px;
+  margin-top: -40px;
 }
 
 .send_button {
